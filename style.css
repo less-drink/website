@@ -17,6 +17,7 @@ html {
 
 .nav-left-title {
     font-size: 2em;
+    cursor: pointer;
     color: #B09CA7;
 }
 
@@ -80,12 +81,105 @@ html {
     margin-top: 20px;
 }
 
+.notify-me:hover {
+    background-color: #92808a;
+    transition: 0.2s;
+}
+
+.inactive {
+    display: none;
+}
+
+.active {
+    display: flex;
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
     .nav {
         padding: 0.5rem 1rem;
     }
 
+    .active {
+        display: flex !important;
+    }
+
+    .inactive {
+        display: none !important;
+    }
+
     .footer {
         padding-left: 1rem;
+    }
+
+    .notify-me-container {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .notify-upper {
+        background-color: #333;
+        opacity: 0.5;
+        height: 22%;
+    }
+
+    .notify-lower {
+        background-color: white;
+        height: 78%;
+        width: 100%;
+    }
+
+    .notify-nav {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1.5rem;
+    }
+
+    #close {
+        width: 20px;
+    }
+
+    .notify-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 2rem;
+        margin-top: 30%;
+    }
+
+    .notify-input {
+        width: 75%;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding-left: 1rem;        
+        border: 2px solid rgb(124, 124, 124);
+    }
+
+    .notify-input:focus {
+        border: 2px solid #B09CA7;
+        outline: none;
+    }
+
+    .notify-main {
+        margin-top: 30%;
+        width: 40%;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #B09CA7;
+        border: none;
+        color: white;
+    }
+
+    .notify-main:hover {
+        background-color: #92808a;
+        transition: 0.2s;
     }
 }

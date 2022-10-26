@@ -16,25 +16,46 @@
         </div>
 
         <div class="nav-right">
-            <a href="https://www.instagram.com/less_drink.business/" class="nav-link"><img src="./assets/icons/instagram.svg" alt="Instagram Icon"></a>
-            <a href="https://www.tiktok.com/@less_drink.business" class="nav-link"><img src="./assets/icons/tiktok.svg" alt="Tiktok Icon"></a>
+            <a href="https://www.instagram.com/less_drink.business/" class="nav-link"><img
+                    src="./assets/icons/instagram.svg" alt="Instagram Icon"></a>
+            <a href="https://www.tiktok.com/@less_drink.business" class="nav-link"><img src="./assets/icons/tiktok.svg"
+                    alt="Tiktok Icon"></a>
         </div>
     </div>
 
     <div class="hero">
         <div class="hero-upper">
             <h1 class="hero-title">Coming soon...</h1>
-            <p class="hero-text">Unsere Website ist Momentant in Entwicklung. Bei Fragen<br> wenden Sie sich an <a href="mailto:less-drink@outlook.com" class="hero-link">less-drink@outlook.com</a>.</p>
+            <p class="hero-text">Unsere Website ist Momentant in Entwicklung. Bei Fragen<br> wenden Sie sich an <a
+                    href="mailto:less-drink@outlook.com" class="hero-link">less-drink@outlook.com</a>.</p>
         </div>
 
         <div class="hero-lower">
-            <button class="notify-me">Benachrichtige mich</button>
+            <button class="notify-me" id="notifyMeButton">Benachrichtige mich</button>
         </div>
     </div>
 
     <div class="footer">
         <p class="copyright">&copy; 2022 - less.</p>
     </div>
+
+    <div class="notify-me-container inactive" id="notifyContainer">
+        <div class="notify-upper" id="notifyUpper"></div>
+        <div class="notify-lower">
+            <div class="notify-nav">
+                <img src="./assets/icons/close.svg" alt="Close icons" id="close">
+            </div>
+
+            <div class="notify-content">
+                <input type="text" class="notify-input" placeholder="Dein Name">
+                <input type="email" class="notify-input" placeholder="Deine Email">              
+                
+                <button class="notify-main" id="notifyMain">Benachrichtige mich</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
