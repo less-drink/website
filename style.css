@@ -82,10 +82,10 @@ html {
 
 @media only screen and (max-width: 600px) {
     .nav {
-        padding: 1rem 3rem;
+        padding: 0.5rem 1rem;
     }
 
-    body {
-        background-color: red;
+    .footer {
+        padding-left: 1rem;
     }
 }
