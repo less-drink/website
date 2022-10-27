@@ -176,10 +176,9 @@ html {
     .notify-input {
         width: 75%;
         height: 40px;
-        border: 2px solid white;
         border-radius: 5px;
         padding-left: 1rem;
-        border: 2px solid rgb(124, 124, 124);
+        border: 2px solid rgb(180, 180, 180);
     }
 
     .notify-input:focus {
