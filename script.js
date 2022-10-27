@@ -10,11 +10,18 @@ const inputEmail = document.getElementById('notify-input-email');
 const errorName = document.getElementById('error-name');
 const errorEmail = document.getElementById('error-email');
 
-function validateEmail(){
+const notifyTitle = document.getElementById('notify-title');
+const notifyText = document.getElementById('notify-text');
+const loadingAnim = document.getElementById('loading');
+
+
+let isloading = false;
+
+function validateEmail() {
     let email = inputEmail.value;
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    if(email == ""){
+    if (email == "") {
         errorEmail.innerText = "Email darf nicht leer sein!"
         errorEmail.classList.add("active");
         errorEmail.classList.remove("inactive");
@@ -24,26 +31,40 @@ function validateEmail(){
     if (email.match(validRegex)) {
         errorEmail.classList.remove("active");
         errorEmail.classList.add("inactive");
-    }else {
+
+        loading();
+    } else {
         errorEmail.innerText = "Ist keine Email!";
         errorEmail.classList.add("active");
         errorEmail.classList.remove("inactive");
     }
 }
 
-function validateName(){
+function loading() {
+    isloading = true;
+    notfiyMain.classList.add("inactive");
+    inputName.classList.add("inactive");
+    inputEmail.classList.add("inactive");
+    notifyText.classList.add("inactive");
+    notifyTitle.classList.add("inactive");
+
+    loadingAnim.classList.add("active");
+    loadingAnim.classList.remove("inactive");
+}
+
+function validateName() {
     let name = inputName.value;
 
-    if(name == ""){
+    if (name == "") {
         errorName.classList.add("active");
         errorName.classList.remove("inactive");
-    }else {
+    } else {
         errorName.classList.remove("active");
         errorName.classList.add("inactive");
     }
 }
 
-function validate(){
+function validate() {
     validateName();
     validateEmail();
 }
@@ -54,13 +75,29 @@ notifyMeButton.onclick = () => {
 }
 
 closeButton.onclick = () => {
+    if(isloading){
+        return;
+    }
+
     notifyContainer.classList.add('inactive');
     notifyContainer.classList.remove('active');
+    errorEmail.classList.add("inactive");
+    errorEmail.classList.remove("active");
+    errorName.classList.add("inactive");
+    errorName.classList.remove("active");
 }
 
 notifyUpper.onclick = () => {
+    if(isloading){
+        return;
+    }
+    
     notifyContainer.classList.add('inactive');
     notifyContainer.classList.remove('active');
+    errorEmail.classList.add("inactive");
+    errorEmail.classList.remove("active");
+    errorName.classList.add("inactive");
+    errorName.classList.remove("active");
 }
 
 notfiyMain.onclick = validate;

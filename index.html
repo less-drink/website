@@ -47,15 +47,24 @@
             </div>
 
             <div class="notify-content">
-                <h2 class="notify-title">Benachrichtigung</h2>
-                <p class="notify-text">Sie möchten benachrichtigt werden wenn unsere Webseite fertiggestellt ist? Geben
-                    sie Ihre Informationen in den untenstehndend Felder ein und klicken sie auf den Button.</p>
+
+                <h2 class="notify-title" id="notify-title">Benachrichtigung</h2>
+                <p class="notify-text" id="notify-text">Sie möchten benachrichtigt werden wenn unsere Webseite fertiggestellt ist?
+                    Geben
+                    sie Ihre Informationen in den untenstehndend Felder ein und klick§en sie auf den Button.</p>
                 <input type="text" class="notify-input" id="notify-input-name" placeholder="Dein Name">
                 <p class="input-error inactive" id="error-name">Name darf nicht leer sein!</p>
                 <input type="email" class="notify-input" id="notify-input-email" placeholder="Deine Email">
                 <p class="input-error inactive" id="error-email">Keine Email</p>
 
                 <button class="notify-main" id="notifyMain">Benachrichtige mich</button>
+
+                <div class="lds-ring inactive" id="loading">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </div>
     </div>
