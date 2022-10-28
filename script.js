@@ -40,6 +40,18 @@ function validateEmail() {
     }
 }
 
+function fail() {
+    loader.classList.add('fail');
+  }
+  function success() {
+    loader.classList.add('success');
+  }
+  
+  function reset() {
+    loader.classList.remove('fail')
+  }
+
+
 function loading() {
     isloading = true;
     notfiyMain.classList.add("inactive");
@@ -51,9 +63,8 @@ function loading() {
     loader.classList.add("active");
     loader.classList.remove("inactive");
 
-    //loader.classList.add("success");
+    setTimeout(() => success(), 1000); 
 }
-
 function validateName() {
     let name = inputName.value;
 
