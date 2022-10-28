@@ -98,7 +98,7 @@ async function loading() {
     redirect: "follow",
   };
 
-  fetch("http://localhost:8080/api/v1/notify", requestOptions)
+  fetch("https://mysterious-temple-75224.herokuapp.com/notify", requestOptions)
     .then((response) => response.text())
     .then((result) => {
       suceeded();
