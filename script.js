@@ -40,6 +40,12 @@ function validateEmail() {
   }
 }
 
+function reset() {
+  loader.classList.add("inactive")
+  loader.classList.remove("active");
+
+}
+
 function fail() {
   loader.classList.add("fail");
 }
@@ -49,16 +55,22 @@ function success() {
 
 function reset() {
   loader.classList.remove("fail");
+  notfiyMain.classList.remove("inactive");
+  inputName.classList.remove("inactive");
+  inputEmail.classList.remove("inactive");
+  notifyText.classList.remove("inactive");
+  notifyTitle.classList.remove("inactive");
 }
 
 function failed() {
   fail();
+  isloading = false;
 }
 
 function suceeded() {
-    success();
-  }
-  
+  success();
+  isloading = false;
+}
 
 async function loading() {
   isloading = true;
