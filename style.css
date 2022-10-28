@@ -115,7 +115,7 @@ html {
 .notify-lower {
     background-color: white;
     -webkit-box-shadow: 8px 6px 20px 5px rgba(0, 0, 0, 0.12);
-    box-shadow: 8px 6px 20px 5px rgba(0, 0, 0, 0.12);    
+    box-shadow: 8px 6px 20px 5px rgba(0, 0, 0, 0.12);
 
 }
 
@@ -277,6 +277,18 @@ html {
 .loader.success,
 .loader.fail {
     animation: pop 1.2s ease-in-out;
+}
+
+
+.footer a {
+    color: #333;
+    text-underline-offset: 4px;
+    font-size: 0.9em;
+}
+
+.footer a:hover {
+    transition: 0.2s;
+    color: #B09CA7;
 }
 
 @keyframes spin {
