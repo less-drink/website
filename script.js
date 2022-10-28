@@ -12,7 +12,7 @@ const errorEmail = document.getElementById('error-email');
 
 const notifyTitle = document.getElementById('notify-title');
 const notifyText = document.getElementById('notify-text');
-const loadingAnim = document.getElementById('loading');
+const loader = document.querySelector('.loader');
 
 
 let isloading = false;
@@ -48,8 +48,10 @@ function loading() {
     notifyText.classList.add("inactive");
     notifyTitle.classList.add("inactive");
 
-    loadingAnim.classList.add("active");
-    loadingAnim.classList.remove("inactive");
+    loader.classList.add("active");
+    loader.classList.remove("inactive");
+
+    //loader.classList.add("success");
 }
 
 function validateName() {
@@ -75,7 +77,7 @@ notifyMeButton.onclick = () => {
 }
 
 closeButton.onclick = () => {
-    if(isloading){
+    if (isloading) {
         return;
     }
 
@@ -88,10 +90,10 @@ closeButton.onclick = () => {
 }
 
 notifyUpper.onclick = () => {
-    if(isloading){
+    if (isloading) {
         return;
     }
-    
+
     notifyContainer.classList.add('inactive');
     notifyContainer.classList.remove('active');
     errorEmail.classList.add("inactive");

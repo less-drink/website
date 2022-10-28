@@ -169,8 +169,8 @@ html {
         align-items: center;
         row-gap: 2rem;
         text-align: left;
-        
-        
+
+
     }
 
     .notify-input {
@@ -222,41 +222,197 @@ html {
         margin-top: -2rem;
     }
 
-    .lds-ring {
-        display: inline-block;
-        position: relative;
-        margin-top: 60%;
-        width: 80px;
-        height: 80px;
-      }
-      .lds-ring div {
-        box-sizing: border-box;
-        display: block;
-        position: absolute;        
-        width: 64px;
-        height: 64px;
-        margin: 8px;
-        border: 8px solid #333;
+    .loader {
+        position: absolute;
+        content: '';
+        top: calc(50% - 2.5rem);
+        left: calc(50% - 2.5rem);
+        width: 5rem;
+        height: 5rem;
+        border: 5px solid rgb(255, 255, 255);
         border-radius: 50%;
-        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-color: #333 transparent transparent transparent;
-      }
-      .lds-ring div:nth-child(1) {
-        animation-delay: -0.45s;
-      }
-      .lds-ring div:nth-child(2) {
-        animation-delay: -0.3s;
-      }
-      .lds-ring div:nth-child(3) {
-        animation-delay: -0.15s;
-      }
-      @keyframes lds-ring {
+        overflow: hidden;
+        transition: 0.3s;
+        box-shadow: 0rem 0rem 0.6rem rgba(0, 0, 0, 0.3);
+        animation: spin 1s linear infinite;
+    }
+
+    .success {
+        background: lightGreen;
+        border-color: lightGreen;
+    }
+
+    .fail {
+        background: #ffcccb;
+        border-color: #ffcccb;
+    }
+
+    .loader.success::before {
+        height: 7px;
+        width: 2.5rem;
+        position: absolute;
+        top: 65%;
+        left: 44%;
+        background-color: green;
+        transform: rotate(-45deg);
+        transform-origin: 0% 50%;
+        border-radius: 5px;
+        animation: baseGrow 1s;
+        content: '';
+    }
+
+    .loader.success::after {
+        height: 7px;
+        width: 1.5rem;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        background-color: green;
+        transform: rotate(-135deg);
+        transform-origin: 0% 50%;
+        border-radius: 5px;
+        animation: tipGrow 1s;
+        content: '';
+    }
+
+
+
+
+    .loader.fail::before {
+        width: 3rem;
+        height: 0.5rem;
+        background: darkRed;
+        transform-origin: 50% 50%;
+        top: calc(50% - 0.25rem);
+        left: calc(50% - 1.5rem);
+        transform: rotate(45deg);
+        position: absolute;
+        content: '';
+        border-radius: 10px;
+        animation: leftIn 0.3s linear;
+        content: '';
+    }
+
+    .loader.fail::after {
+        width: 3rem;
+        height: 0.5rem;
+        background: darkRed;
+        transform-origin: 50% 50%;
+        top: calc(50% - 0.25rem);
+        right: calc(50% - 1.5rem);
+        transform: rotate(-45deg);
+        position: absolute;
+        content: '';
+        border-radius: 10px;
+        animation: rightIn 0.3s linear;
+        content: '';
+    }
+
+    .loader.success,
+    .loader.fail {
+        animation: pop 1.2s ease-in-out;
+    }
+
+    @keyframes spin {
         0% {
-          transform: rotate(0deg);
+            transform: rotate(0deg);
+            border-top: 5px solid #92808a;
         }
+
         100% {
-          transform: rotate(360deg);
+            transform: rotate(360deg);
+            border-top: 5px solid #92808a;
+
         }
-      }
-      
+    }
+
+    @keyframes tipGrow {
+        0% {
+            width: 0px;
+            left: 0;
+            top: 0;
+        }
+
+        25% {
+            width: 0px;
+            left: 0;
+            top: 0;
+        }
+
+        50% {
+            top: 0%;
+            left: 0%;
+            width: 0;
+        }
+
+        75% {
+            top: 0%;
+            left: 0%;
+            width: 0rem;
+        }
+
+        100% {
+            top: 65%;
+            left: 50%;
+            width: 1.5rem;
+        }
+    }
+
+    @keyframes baseGrow {
+        0% {
+
+            width: 0;
+        }
+
+        90% {
+            width: 0;
+        }
+
+        100% {
+
+            width: 2.5rem;
+        }
+    }
+
+    @keyframes pop {
+        0% {
+            transform: scale(1);
+        }
+
+        80% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1.1);
+        }
+    }
+
+    @keyframes leftIn {
+        0% {
+            left: 0;
+            top: 0;
+            width: 0;
+        }
+
+        100% {
+            top: calc(50% - 0.25rem);
+            left: calc(50% - 1.5rem);
+            width: 3rem;
+        }
+    }
+
+    @keyframes rightIn {
+        0% {
+            rigth: 0;
+            top: 0;
+            width: 0;
+        }
+
+        100% {
+            top: calc(50% - 0.25rem);
+            right: calc(50% - 1.5rem);
+            width: 3rem;
+        }
+    }
 }
