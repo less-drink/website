@@ -88,6 +88,14 @@ html {
 .content {
     margin: auto;
     width: 50%;
+    overflow-y: scroll;
+    height: 70vh;
+}
+
+@media only screen and (max-width: 1000px){
+    .content {
+        width: 75%;
+    }
 }
 
 
