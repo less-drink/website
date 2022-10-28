@@ -85,6 +85,12 @@ html {
     color: rgb(119, 119, 119);
 }
 
+.content {
+    margin: auto;
+    width: 50%;
+}
+
+
 @media only screen and (max-width: 600px) {
     .nav {
         padding: 0.5rem 1rem;
@@ -95,7 +101,16 @@ html {
         position: relative;
     }
 
+    .wrapper {
+        position: relative;
+        top: none;
+        left: none;
+        transform: none;
+    }
+
     .content {
+        margin: none;
+        width: auto;
         padding-left: 1rem;
         padding-right: 1rem;
         display: flex;
